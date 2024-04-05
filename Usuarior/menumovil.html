@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../sw/dist/sweetalert2.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script type="text/javascript" language="Javascript" src="../js/funcionesr.js"></script>
+
+    <title>Menu</title>
+    <link rel="stylesheet" href="../Style/estiloMenur.css">
+  </head>
+  <body class="inicio">
+<div>
+  <nav class="nav">
+        <ul class="list">
+        <div class="logo">
+                <img src="../img/u.jpeg"></img>
+            </div>
+            <li class="list__item">
+                <div class="list__button">
+                    <img src="../assets/dashboard.svg" class="list__img">
+                    <a href="menuinicio.html" class="nav__link">Inicio</a>
+                </div>
+            </li>
+
+            <li class="list__item list__item--click">
+                <div class="list__button list__button--click">
+                    <img src="../assets//docs.svg" class="list__img">
+                    <a href="#" class="nav__link">Evaluacion</a>
+                    <img src="../assets/arrow.svg" class="list__arrow">
+                </div>
+
+                <ul class="list__show">
+                    <li class="list__inside">
+                        <a href="menua.html" class="nav__link nav__link--inside">Ingresar datos</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list__item list__item--click">
+                <div class="list__button list__button--click">
+                    <img src="../assets//docs.svg" class="list__img">
+                    <a href="#" class="nav__link">Documentacion
+                    </a>
+                    <img src="../assets/arrow.svg" class="list__arrow">
+                </div>
+
+                <ul class="list__show">
+                    <li class="list__inside">
+                        <a href="https://www.suin-juriscol.gov.co/viewDocument.asp?id=30050345#:~:text=RESOLUCION%20773%20DE%202023&text=(noviembre%2002)-,por%20la%20cual%20se%20adoptan%20los%20l%C3%ADmites%20de%20exposici%C3%B3n%20de,despliegue%20de%20antenas%20de%20radiocomunicaciones." class="nav__link nav__link--inside">Resolucion <br>anes 773 2023</a>
+                    </li>
+                    <li class="list__inside">
+                        <a href="https://www.itu.int/ITU-T/recommendations/rec.aspx?rec=13446&lang=es" class="nav__link nav__link--inside">UIT-T K.52</a>
+                    </li>
+                    <li class="list__inside">
+                        <a href="https://www.itu.int/ITU-T/recommendations/rec.aspx?rec=13448&lang=es" class="nav__link nav__link--inside">UIT-T K.70</a>
+                    </li>
+                    <li class="list__inside">
+                        <a href="https://www.itu.int/rec/T-REC-K.100/es" class="nav__link nav__link--inside">UIT-T K. 100</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list__item list__item--click">
+                <div class="list__button list__button--click">
+                    <img src="../assets//docs.svg" class="list__img">
+                    <a href="" class="nav__link">Complemento</a>
+                    <img src="../assets/arrow.svg" class="list__arrow">
+                </div>
+
+                <ul class="list__show">
+                    <li class="list__inside">
+                        <a href="creditos.html" class="nav__link nav__link--inside">Creditos</a>
+                    </li>
+                    <li class="list__inside">
+                        <a href="comentario.html" class="nav__link nav__link--inside">Comentarios</a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </nav>
+</div>
+<br><br>
+<div class="container" >
+                <div class="card">
+                    <div class="card-header bg-info">
+                        <h3 class="text-white text-center">Ingreso de datos</h3>
+                    </div>
+                    <div class="card-body">
+                        <h5>Selecciona una opción:</h5>
+                        <select id="selectOpcion" onchange="cambiarFormulario()">
+                        <option value="opcion1">PIRE</option>
+                        <option value="opcion2">Sin PIRE</option>
+                        </select>
+                        <form name="formu" action="" method="post">
+                            <div class="row">
+                                <div class="col-md-6" id="frecuencia" >
+                                    <label for="nom">Frecuencia (Mhz)</label>
+                                    <input type="number" name="fre" id="fre" class="form-control" placeholder="Digite la frecuencia" required="">
+                                </div>
+                                <div class="col-md-6" id="dpire" >
+                                    <label for="nom">PIRE (dbm)</label>
+                                    <input type="number" name="pire" id="pire" class="form-control" placeholder="Digite el PIRE" required="">
+                                </div>
+                                <div class="col-md-6" id="potencia" style="display: none;">
+                                    <label for="nom">Potencia maxima (W)</label>
+                                    <input type="number" name="pot" id="pot" class="form-control" placeholder="Digite la potencia maxima" required="">
+                                </div>
+                                <div class="col-md-6" id="altura" >
+                                    <label for="nom">Altura (M)</label>
+                                    <input type="number" name="alt" id="alt" class="form-control" placeholder="Digite la altura" required="">
+                                </div>
+                                <div class="col-md-6" id="ganancia" style="display: none;">
+                                    <label for="nom">Ganancia de la antena (dbi)</label>
+                                    <input type="number" name="gan" id="gan" class="form-control" placeholder="Digite la ganancia de la antena" required="">
+                                </div>
+                                <div class="col-md-12">
+                                    <br>
+                                    <input type="button" class="btn btn-primary" value="Evaluar" onclick="validarforma()">
+                                </div>
+                            </div>
+                        </form><br>
+                        <div class="graf">
+                        <img src="../img/grafico.jpeg" class="grafimg"></img>
+                        <label class="text">D = Distancia minima horizontal <br> R = Minima distancia a la antena o sistema irradiante <br> A = Distancia vertical desde la altura de una persona a la antena</label>
+                        </div><br>
+                        <label >Distancia ocupacional: </label>
+                        <label  id="do"></label>
+                        <label >Distancia poblacional: </label>
+                        <label  id="dp"></label>
+                        <div class="graf2">
+                            <img src="../img/S1.jpeg" class="señal" id="s1"></img>
+                            <img src="../img/S2.jpeg" class="señal" id="s2"></img>
+                        </div>
+                    </div> 
+                </div>
+                    <div class="containersupp"></div>
+            </div>
+        </div>
+  <script src="../js/menu.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function cambiarFormulario() {
+            var opcionSeleccionada = document.getElementById("selectOpcion").value;
+            if (opcionSeleccionada === "opcion1") {
+                document.getElementById("frecuencia").style.display = "block";
+                document.getElementById("dpire").style.display = "block";
+                document.getElementById("potencia").style.display = "none";   
+                document.getElementById("altura").style.display = "block";
+                document.getElementById("ganancia").style.display = "none";
+            } else if (opcionSeleccionada === "opcion2") {
+                document.getElementById("frecuencia").style.display = "block";
+                document.getElementById("dpire").style.display = "none";
+                document.getElementById("potencia").style.display = "block";   
+                document.getElementById("altura").style.display = "block";
+                document.getElementById("ganancia").style.display = "block";
+            }
+        }
+        function validarforma() {
+            var opcionSeleccionada = document.getElementById("selectOpcion").value;
+            var imagen1 = document.getElementById("s1");
+            var imagen2 = document.getElementById("s2");
+            if (opcionSeleccionada === "opcion1") {
+
+                var fre = document.getElementById("fre").value;
+                var pire = document.getElementById("pire").value;
+                var pot = document.getElementById("pot").value;
+                var alt = document.getElementById("alt").value;
+                var gan = document.getElementById("gan").value;
+                
+                if(fre < 30){
+                    document.getElementById("do").textContent = " 0 m No es necesaria una medicion, ni una señalizacion. ";
+                    document.getElementById("dp").textContent = " 0 m No es necesaria una medicion, ni una señalizacion. ";
+                }else if(fre >= 30 && fre <=400){
+                    let rocu = 0.143 * Math.sqrt(pire);
+                    let rpub = 0.319 * Math.sqrt(pire);
+                    let distanciaocu = Math.sqrt(Math.abs(rocu**2 - alt**2));
+                    let distanciapub = Math.sqrt(Math.abs(rpub**2 - alt**2));
+                    const decimales = 2;
+                    distanciaocu = distanciaocu.toFixed(decimales);
+                    distanciapub = distanciapub.toFixed(decimales);
+                    if(rocu < alt){
+                        document.getElementById("do").textContent = " -" + distanciaocu + " m, ";
+                    }else{
+                        document.getElementById("do").textContent = distanciaocu + " m necesita señalizacion y medicion, ";
+                        imagen1.style.display = "block";
+                    }
+                    if(rpub < alt){
+                        document.getElementById("dp").textContent = " -" + distanciapub + " m";
+                    }else{
+                        document.getElementById("dp").textContent = distanciapub + " m necesita señalizacion y medicion";
+                        imagen2.style.display = "block";
+                    }
+                }else if(fre > 400 && fre <= 2000){
+                    let rocu = 2.92 * Math.sqrt(pire/fre);
+                    let rpub = 6.38 * Math.sqrt(pire/fre);
+                    let distanciaocu = Math.sqrt(Math.abs(rocu**2 - alt**2));
+                    let distanciapub = Math.sqrt(Math.abs(rpub**2 - alt**2));
+                    const decimales = 2;
+                    distanciaocu = distanciaocu.toFixed(decimales);
+                    distanciapub = distanciapub.toFixed(decimales);
+                    if(rocu < alt){
+                        document.getElementById("do").textContent = " -" + distanciaocu + " m, ";
+                    }else{
+                        document.getElementById("do").textContent = distanciaocu + " m necesita señalizacion y medicion, ";
+                        imagen1.style.display = "block";
+                    }
+                    if(rpub < alt){
+                        document.getElementById("dp").textContent = " -" + distanciapub + " m";
+                    }else{
+                        document.getElementById("dp").textContent = distanciapub + " m necesita señalizacion y medicion";
+                        imagen2.style.display = "block";
+                    }
+                }else if(fre > 2000 && fre <= 300000){
+                    let rocu = 0.0638 * Math.sqrt(pire);
+                    let rpub = 0.143 * Math.sqrt(pire);
+                    let distanciaocu = Math.sqrt(Math.abs(rocu**2 - alt**2));
+                    let distanciapub = Math.sqrt(Math.abs(rpub**2 - alt**2));
+                    const decimales = 4;
+                    distanciaocu = distanciaocu.toFixed(decimales);
+                    distanciapub = distanciapub.toFixed(decimales);
+                    if(rocu < alt){
+                        document.getElementById("do").textContent = " -" + distanciaocu + " m, ";
+                    }else{
+                        document.getElementById("do").textContent = distanciaocu + " m necesita señalizacion y medicion, ";
+                        imagen1.style.display = "block";
+                    }
+                    if(rpub < alt){
+                        document.getElementById("dp").textContent = " -" + distanciapub + " m";
+                    }else{
+                        document.getElementById("dp").textContent = distanciapub + " m necesita señalizacion y medicion";
+                        imagen2.style.display = "block";
+                    }
+                }
+            
+            } else if (opcionSeleccionada === "opcion2") {
+                
+                var fre = document.getElementById("fre").value;
+                var pot = document.getElementById("pot").value;
+                var alt = document.getElementById("alt").value;
+                var gan = document.getElementById("gan").value;
+                
+                var pire = (10 * Math.log10(pot/0.001));
+
+                if(fre < 30){
+                    document.getElementById("do").textContent = " 0 m No es necesaria una medicion, ni una señalizacion. ";
+                    document.getElementById("dp").textContent = " 0 m No es necesaria una medicion, ni una señalizacion. ";
+                }else if(fre >= 30 && fre <=400){
+                    let rocu = 0.143 * Math.sqrt(pire);
+                    let rpub = 0.319 * Math.sqrt(pire);
+                    let distanciaocu = Math.sqrt(Math.abs(rocu**2 - alt**2));
+                    let distanciapub = Math.sqrt(Math.abs(rpub**2 - alt**2));
+                    const decimales = 2;
+                    distanciaocu = distanciaocu.toFixed(decimales);
+                    distanciapub = distanciapub.toFixed(decimales);
+                    if(rocu < alt){
+                        document.getElementById("do").textContent = " -" + distanciaocu + " m, ";
+                    }else{
+                        document.getElementById("do").textContent = distanciaocu + " m necesita señalizacion y medicion, ";
+                        imagen1.style.display = "block";
+                    }
+                    if(rpub < alt){
+                        document.getElementById("dp").textContent = " -" + distanciapub + " m";
+                    }else{
+                        document.getElementById("dp").textContent = distanciapub + " m necesita señalizacion y medicion";
+                        imagen2.style.display = "block";
+                    }
+                }else if(fre > 400 && fre <= 2000){
+                    let rocu = 2.92 * Math.sqrt(pire/fre);
+                    let rpub = 6.38 * Math.sqrt(pire/fre);
+                    let distanciaocu = Math.sqrt(Math.abs(rocu**2 - alt**2));
+                    let distanciapub = Math.sqrt(Math.abs(rpub**2 - alt**2));
+                    const decimales = 2;
+                    distanciaocu = distanciaocu.toFixed(decimales);
+                    distanciapub = distanciapub.toFixed(decimales);
+                    if(rocu < alt){
+                        document.getElementById("do").textContent = " -" + distanciaocu + " m, ";
+                    }else{
+                        document.getElementById("do").textContent = distanciaocu + " m necesita señalizacion y medicion, ";
+                        imagen1.style.display = "block";
+                    }
+                    if(rpub < alt){
+                        document.getElementById("dp").textContent = " -" + distanciapub + " m";
+                    }else{
+                        document.getElementById("dp").textContent = distanciapub + " m necesita señalizacion y medicion";
+                        imagen2.style.display = "block";
+                    }
+                }else if(fre > 2000 && fre <= 300000){
+                    let rocu = 0.0638 * Math.sqrt(pire);
+                    let rpub = 0.143 * Math.sqrt(pire);
+                    let distanciaocu = Math.sqrt(Math.abs(rocu**2 - alt**2));
+                    let distanciapub = Math.sqrt(Math.abs(rpub**2 - alt**2));
+                    const decimales = 4;
+                    distanciaocu = distanciaocu.toFixed(decimales);
+                    distanciapub = distanciapub.toFixed(decimales);
+                    if(rocu < alt){
+                        document.getElementById("do").textContent = " -" + distanciaocu + " m, ";
+                    }else{
+                        document.getElementById("do").textContent = distanciaocu + " m necesita señalizacion y medicion, ";
+                        imagen1.style.display = "block";
+                    }
+                    if(rpub < alt){
+                        document.getElementById("dp").textContent = " -" + distanciapub + " m";
+                    }else{
+                        document.getElementById("dp").textContent = distanciapub + " m necesita señalizacion y medicion";
+                        imagen2.style.display = "block";
+                    }
+                }
+
+            }
+        }
+    </script>
+  </body>
+</html>
